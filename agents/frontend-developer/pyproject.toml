@@ -1,0 +1,15 @@
+[project]
+name = "frontend-developer-agent"
+version = "0.1.0"
+description = "Agent Développeur Frontend Senior : interfaces React/Next.js/TypeScript performantes, accessibles et testées, avec le SDK Mistral Agents."
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    # SDK Mistral Agents : extra "koyeb" = sandbox Mistral, "bashkit" = sandbox shell léger.
+    "mistralai-agents[bashkit,koyeb]==1.1.0",
+    # Requis par agents.LocalDockerSandbox (sandbox locale en développement).
+    "docker>=7.0.0",
+]
+
+# Le CLI `agents` (chat, deploy, logs...) charge l'agent depuis cet entrypoint.
+[tool.mistralai.agents]
+entrypoint = "main:agent"

@@ -1,0 +1,16 @@
+# Secrets — jamais commités
+.env
+
+# Environnements virtuels et caches
+.venv/
+.uv/
+__pycache__/
+*.py[oc]
+
+# Build
+build/
+dist/
+uv.lock.bak
+
+# Système
+.DS_Store
